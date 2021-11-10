@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                 databaseReference.child(username).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if(snapshot.hasChild(username)){
+
                         Log.d(TAG, "onDataChange: "+ snapshot.child("userEmail").getValue());
                             String email = (String) snapshot.child("userEmail").getValue();
                         //Log.d(TAG, "onDataChange: "+ snapshot.child("userEmail").getValue());
@@ -82,7 +82,9 @@ public class LoginActivity extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<AuthResult> task) {
                                             if (task.isSuccessful()){
                                                 progressBar.setVisibility(View.INVISIBLE);
-                                                Toast.makeText(getApplicationContext(), "Logged in", Toast.LENGTH_SHORT).show();
+                                                //Toast.makeText(getApplicationContext(), "Logged in", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                                startActivity(intent);
                                             } else {
                                                 progressBar.setVisibility(View.INVISIBLE);
                                                 Toast.makeText(getApplicationContext(), "Error logging in", Toast.LENGTH_SHORT).show();
@@ -95,10 +97,10 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), "Error:"+e.toString(), Toast.LENGTH_SHORT).show();
                                 }
                             });
-                        } else {
-                            progressBar.setVisibility(View.INVISIBLE);
-                            Toast.makeText(getApplicationContext(), "User not found", Toast.LENGTH_SHORT).show();
-                        }
+//                        } else {
+//                            progressBar.setVisibility(View.INVISIBLE);
+//                            Toast.makeText(getApplicationContext(), "User not found", Toast.LENGTH_SHORT).show();
+//                        }
                     }
 
                     @Override
