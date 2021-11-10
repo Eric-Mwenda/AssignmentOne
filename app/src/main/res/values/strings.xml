@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Assignment One</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="signUp">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="if_you_don_t_have_an_account">If you don\'t have an account, </string>
+    <string name="click_here">click here</string>
+</resources>
